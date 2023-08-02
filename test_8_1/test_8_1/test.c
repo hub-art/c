@@ -76,4 +76,4 @@ int main() {
     }
     printf("可以得到%d瓶汽水", count);
     return 0;
-}
+}  
