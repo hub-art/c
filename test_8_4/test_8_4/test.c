@@ -138,14 +138,45 @@
 递归和非递归分别实现求的阶乘（不考虑溢出的问题）
  */
 
+//#include "stdio.h"
+//
+//int factorial_recursive(int num) {
+//    if (num == 0 || num == 1) {
+//        return 1;
+//    }
+//    else {
+//        return num * factorial_recursive(num - 1);
+//    }
+//}
+//
+//int main() {
+//    int num = 0;
+//    printf("请输入一个数\n");
+//    scanf("%d", &num);
+//    int factorial = factorial_recursive(num);
+//    printf("%d的阶乘是%d", num, factorial);
+//    return 0;
+//}
+
+
+
+/*
+ * 作业标题(687)
+打印一个数的每一位
+作业内容
+递归方式实现打印一个整数的每一位
+ */
+
 #include "stdio.h"
 
-int factorial_recursive(int num) {
-    if (num == 0 || num == 1) {
-        return 1;
+int print_digits_recursive(int num) {
+    if (num < 10) {
+        printf("%d ", num);
+        return 0;
     }
     else {
-        return num * factorial_recursive(num - 1);
+        print_digits_recursive(num / 10);
+        printf("%d ", num % 10);
     }
 }
 
@@ -153,7 +184,6 @@ int main() {
     int num = 0;
     printf("请输入一个数\n");
     scanf("%d", &num);
-    int factorial = factorial_recursive(num);
-    printf("%d的阶乘是%d", num, factorial);
+    print_digits_recursive(num);
     return 0;
 }
